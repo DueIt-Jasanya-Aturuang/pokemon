@@ -1,4 +1,4 @@
-get:
+GET:
   tags:
     - account-service
   parameters:
@@ -8,7 +8,7 @@ get:
     - $ref: '../../component/parameter/header.yaml#UserId'
   responses:
     200:
-      $ref: './request/profile.yaml#Response200'
+      $ref: './request/profile_request.yaml#Response200'
     400:
       $ref: '../../component/schemas/response/err400.yaml#400BadRequest'
     422:

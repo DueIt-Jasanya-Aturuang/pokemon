@@ -1,17 +1,16 @@
-PUT:
+POST:
   tags:
-    - account-service
+    - auth-service
+  description: 'per email hanya memiliki 5 kali request dalam 1 jam untuk activasi akun, dan 6 jam untuk forgot password'
   parameters:
     - $ref: '../../component/parameter/header.yaml#AppId'
-    - $ref: '../../component/parameter/header.yaml#Authorization'
     - $ref: '../../component/parameter/header.yaml#Key'
-    - $ref: '../../component/parameter/header.yaml#UserId'
-    - $ref: './request/account_request.yaml#PathProfileId'
+    - $ref: './request/otp_request.yaml#Type'
   requestBody:
-    $ref: './request/account_request.yaml#Body'
+    $ref: './request/otp_request.yaml#BodyGenerateOtp'
   responses:
     200:
-      $ref: './request/account_request.yaml#Responses200'
+      $ref: './request/otp_request.yaml#Response200'
     400:
       $ref: '../../component/schemas/response/err400.yaml#400BadRequest'
     422:
@@ -26,4 +25,3 @@ PUT:
       $ref: '../../component/schemas/response/err404.yaml#404NotFound'
     500:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
-  

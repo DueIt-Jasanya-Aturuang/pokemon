@@ -1,17 +1,14 @@
-POST:
+Login:
   tags:
-    - account-service
+    - auth-service
   parameters:
     - $ref: '../../component/parameter/header.yaml#AppId'
-    - $ref: '../../component/parameter/header.yaml#Authorization'
     - $ref: '../../component/parameter/header.yaml#Key'
-    - $ref: '../../component/parameter/header.yaml#UserId'
-    - $ref: './request/profile-config_request.yaml#PathProfileId'
   requestBody:
-    $ref : './request/profile-config_request.yaml#BodyPost'
+    $ref: './request/auth_request.yaml#BodyLogin'
   responses:
-    201:
-      $ref: './request/profile-config_request.yaml#Response200'
+    200:
+      $ref: './request/auth_request.yaml#Response200'
     400:
       $ref: '../../component/schemas/response/err400.yaml#400BadRequest'
     422:
@@ -27,19 +24,17 @@ POST:
     500:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
 
-GET:
+Register:
   tags:
-    - account-service
+    - auth-service
   parameters:
     - $ref: '../../component/parameter/header.yaml#AppId'
-    - $ref: '../../component/parameter/header.yaml#Authorization'
     - $ref: '../../component/parameter/header.yaml#Key'
-    - $ref: '../../component/parameter/header.yaml#UserId'
-    - $ref: './request/profile-config_request.yaml#PathProfileId'
-    - $ref: './request/profile-config_request.yaml#PathConfigName'
+  requestBody:
+    $ref: './request/auth_request.yaml#BodyRegister'
   responses:
     200:
-      $ref: './request/profile-config_request.yaml#Response200'
+      $ref: './request/auth_request.yaml#Response200'
     400:
       $ref: '../../component/schemas/response/err400.yaml#400BadRequest'
     422:
@@ -55,21 +50,17 @@ GET:
     500:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
 
-PUT:
+Login-Google:
   tags:
-    - account-service
+    - auth-service
   parameters:
     - $ref: '../../component/parameter/header.yaml#AppId'
-    - $ref: '../../component/parameter/header.yaml#Authorization'
     - $ref: '../../component/parameter/header.yaml#Key'
-    - $ref: '../../component/parameter/header.yaml#UserId'
-    - $ref: './request/profile-config_request.yaml#PathProfileId'
-    - $ref: './request/profile-config_request.yaml#PathConfigName'
   requestBody:
-    $ref: './request/profile-config_request.yaml#BodyPut'
+    $ref: './request/auth_request.yaml#BodyLoginGoogle'
   responses:
     200:
-      $ref: './request/profile-config_request.yaml#Response200'
+      $ref: './request/auth_request.yaml#Response200'
     400:
       $ref: '../../component/schemas/response/err400.yaml#400BadRequest'
     422:
@@ -84,4 +75,29 @@ PUT:
       $ref: '../../component/schemas/response/err404.yaml#404NotFound'
     500:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
-  
+
+Logout:
+  tags:
+    - auth-service
+  parameters:
+    - $ref: '../../component/parameter/header.yaml#AppId'
+    - $ref: '../../component/parameter/header.yaml#Authorization'
+    - $ref: '../../component/parameter/header.yaml#Key'
+    - $ref: '../../component/parameter/header.yaml#UserId'
+  responses:
+    200:
+      $ref: './request/auth_request.yaml#Response200Logout'
+    400:
+      $ref: '../../component/schemas/response/err400.yaml#400BadRequest'
+    422:
+      $ref: '../../component/schemas/response/err422.yaml#422UnprocessableEntity'
+    403:
+      $ref: '../../component/schemas/response/err403.yaml#403Forbidden'
+    401:
+      $ref: '../../component/schemas/response/err401.yaml#401UnAuthorization'
+    408:
+      $ref: '../../component/schemas/response/err408.yaml#408RequestTimeout'
+    404:
+      $ref: '../../component/schemas/response/err404.yaml#404NotFound'
+    500:
+      $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'

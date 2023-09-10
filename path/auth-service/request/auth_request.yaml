@@ -1,0 +1,85 @@
+BodyLogin:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - email_or_username
+          - password
+          - remember_me
+        properties:
+          email_or_username:
+            type: string
+          password:
+            type: string
+          remember_me:
+            type: boolean
+BodyRegister:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - full_name
+          - username
+          - email
+          - password
+          - re_password
+        properties:
+          full_name:
+            type: string
+          username:
+            type: string
+          email:
+            type: string
+          password:
+            type: string
+          re_password:
+            type: string
+
+BodyLoginGoogle:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - token
+          - device
+        properties:
+          token:
+            type: string
+          device:
+            type: string
+
+PathProfileId:
+  name: profile-id
+  in: path
+  required: true
+
+Response200:
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          data:
+            type: object
+            properties:
+              user:
+                $ref: '../../../component/schemas/user.yaml#user'
+              token:
+                $ref: '../../../component/schemas/token.yaml#Token'
+              profile:
+                $ref: '../../../component/schemas/profile.yaml#profile'
+
+Response200Logout:
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+

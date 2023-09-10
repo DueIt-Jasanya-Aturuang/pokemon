@@ -42,6 +42,6 @@ Responses200:
               type: object
               properties:
                 user:
-                  $ref: '../../../component/schemas/account-svc/user.yaml#user'
+                  $ref: '../../../component/schemas/user.yaml#user'
                 profile:
-                  $ref: '../../../component/schemas/account-svc/profile.yaml#profile'
+                  $ref: '../../../component/schemas/profile.yaml#profile'

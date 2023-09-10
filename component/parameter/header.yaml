@@ -1,6 +1,6 @@
 AppId:
   in: header
-  name: App-Id
+  name: App-ID
   schema:
     type: string
   description: app id, dapet dari tim backend
@@ -18,7 +18,7 @@ Key:
   description: key, dapet dari tim backend
 UserId:
   in: header
-  name: User-Id
+  name: User-ID
   schema:
     type: string
   description: userid, dari data user

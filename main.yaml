@@ -1,10 +1,16 @@
 openapi: '3.0.2'
 info:
   title: DUEIT DOCUMENTATION 1.0
-  description: |-
-    data header:
-    - appid = this is app id
+  description: |
+    #### data header:
+    - appid = 5410801c-faaf-4776-95be-56472e044820
     - key = this key
+    #### encryption:
+    - aes = make aes cbc untuk decrypt token login google make padding pkcs7
+    - key aes cbc = rp1LZ7WNMXaq9KhK2LIkMbAA8qbMkFQb
+    - iv aes cbc = auTHxeaZSrsxfIZI
+    #### secret:
+    - google client id untuk fe web = nnti ya
   version: '1.0'
 servers:
   - url: https://dueit.my.id/api
@@ -12,16 +18,24 @@ servers:
 tags:
   - name: account-service
     description: ini berkaitan sama profile user
+  - name: auth-service
+    description: ini berkaitan authentication
 paths:
   /account/{profile-id}:
-    $ref: "./path/account-service/account.yaml"
-
+    put:
+      tags:
+        - account-service
+      $ref: "./path/account-service/account.yaml#/PUT"
   /account/profile:
-    $ref: "./path/account-service/profile.yaml"
-
+    get:
+      tags:
+        - account-service
+      $ref: "./path/account-service/profile.yaml#/GET"
   /account/profile-config/{profile-id}:
-    $ref: "./path/account-service/profile-config.yaml#/POST"
-
+    post:
+      tags:
+        - account-service
+      $ref: "./path/account-service/profile-config.yaml#/POST"
   /account/profile-config/{profile-id}/{config-name}:
     get:
       tags:
@@ -31,4 +45,49 @@ paths:
       tags:
         - account-service
       $ref: "./path/account-service/profile-config.yaml#/PUT"
+
+  /auth/login:
+    post:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/auth.yaml#/Login'
+  /auth/login-google:
+    post:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/auth.yaml#/Login-Google'
+  /auth/register:
+    post:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/auth.yaml#/Register'
+  /auth/logout:
+    post:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/auth.yaml#/Logout'
+  /auth/otp:
+    post:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/otp.yaml#/POST'
+  /auth/activasi-account:
+    put:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/user.yaml#/Activasi-Account'
+  /auth/reset-password:
+    put:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/user.yaml#/Reset-Password'
+  /forgot-password:
+    post:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/forgot-password.yaml#/POST'
+    put:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/forgot-password.yaml#/PUT'
 

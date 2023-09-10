@@ -1,0 +1,48 @@
+BodyResetPassword:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - old_password
+          - password
+          - re_password
+        properties:
+          old_password:
+            type: string
+          password:
+            type: string
+          re_password:
+            type: string
+
+BodyActivasiAccount:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - email
+          - otp
+        properties:
+          email:
+            type: string
+          otp:
+            type: string
+
+Type:
+  in: header
+  name: Type
+  schema:
+    type: string
+  description: activasi-account | forgot-password
+
+Response200:
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+

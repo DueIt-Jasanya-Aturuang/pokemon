@@ -67,4 +67,4 @@ Response200:
         type: object
         properties:
           data:
-            $ref: '../../../component/schemas/account-svc/profile-config.yaml#profileConfig'
+            $ref: '../../../component/schemas/profile-config.yaml#profileConfig'

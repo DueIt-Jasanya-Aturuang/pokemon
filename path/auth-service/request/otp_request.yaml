@@ -1,0 +1,28 @@
+BodyGenerateOtp:
+  content:
+    application/json:
+      schema:
+        type: object
+        required:
+          - email
+        properties:
+          email:
+            type: string
+
+Type:
+  in: header
+  name: Type
+  schema:
+    type: string
+  description: activasi-account | forgot-password
+
+Response200:
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+
