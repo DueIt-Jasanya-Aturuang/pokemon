@@ -1,0 +1,24 @@
+AppId:
+  in: header
+  name: App-Id
+  schema:
+    type: string
+  description: app id, dapet dari tim backend
+Authorization:
+  in: header
+  name: Authorization
+  schema:
+    type: string
+  description: auth token, gausah make bearer
+Key:
+  in: header
+  name: X-Key
+  schema:
+    type: string
+  description: key, dapet dari tim backend
+UserId:
+  in: header
+  name: User-Id
+  schema:
+    type: string
+  description: userid, dari data user

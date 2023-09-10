@@ -1,0 +1,10 @@
+401UnAuthorization:
+  description: UN AUTHORIZATION
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          errors:
+            type: string
+            example: "UN AUTHORIZATION"

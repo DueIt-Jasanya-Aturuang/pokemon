@@ -1,0 +1,18 @@
+profileConfig:
+  type: object
+  properties:
+    profile_config_id:
+      type: string
+      example: "profileconfigid_1"
+    profile_id:
+      type: string
+      example: "profileid_1"
+    config_name:
+      type: string
+      example: "DAILY_NOTIF"
+    config_value:
+      type: string
+      example: "19:00 Asia/Jakarta"
+    status:
+      type: string
+      example: "on"

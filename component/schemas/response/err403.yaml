@@ -1,0 +1,10 @@
+403Forbidden:
+  description: FORBIDDEN
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          errors:
+            type: string
+            example: "FORBIDDEN"

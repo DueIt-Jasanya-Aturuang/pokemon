@@ -1,0 +1,9 @@
+profile:
+  type: object
+  properties:
+    profile_id:
+      type: string
+      example: "profileid_1"
+    quote:
+      type: string
+      example: "semangat"

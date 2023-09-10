@@ -1,0 +1,13 @@
+422UnprocessableEntity:
+  description: UNPROCESSABLE ENTITY
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          errors:
+            type: object
+            properties:
+              field1:
+                type: string
+                example: "unprocessable entity"

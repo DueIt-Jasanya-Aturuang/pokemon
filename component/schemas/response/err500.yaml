@@ -1,0 +1,10 @@
+500InternalServerError:
+  description: INTERNAL SERVER ERROR
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          errors:
+            type: string
+            example: "INTERNAL SERVER ERROR"

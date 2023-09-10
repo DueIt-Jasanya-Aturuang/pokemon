@@ -1,0 +1,10 @@
+404NotFound:
+  description: NOT FOUND
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          errors:
+            type: string
+            example: "NOT FOUND"

@@ -1,0 +1,70 @@
+BodyPost:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          config_value:
+            type: string
+            example: "19:00 Asia/Jakarta OR 29"
+            description: "kalo MONTHLY_PERIOD date aja"
+          days:
+            type: array
+            items:
+              type: string
+            example:
+              - monday
+              - tuesday
+            description: "kalo MONTHLY_PERIOD empty aja days"
+          config_name:
+            type: string
+            example: "MONTHLY_PERIOD OR DAILY_NOTIFY"
+          status:
+            type: string
+            example: "on ATAU off"
+          token:
+            type: string
+            example: "i1ouhsidh9812asjh"
+
+BodyPut:
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          config_value:
+            type: string
+            example: "19:00 Asia/Jakarta OR 29"
+            description: "kalo MONTHLY_PERIOD date aja"
+          days:
+            type: array
+            items:
+              type: string
+            example:
+              - monday
+              - tuesday
+            description: "kalo MONTHLY_PERIOD empty aja days"
+          status:
+            type: string
+            example: "on ATAU off"
+          token:
+            type: string
+            example: "i1ouhsidh9812asjh"
+PathProfileId:
+  name: profile-id
+  in: path
+  required: true
+PathConfigName:
+  name: config-name
+  in: path
+  required: true
+
+Response200:
+  description: OK
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          data:
+            $ref: '../../../component/schemas/account-svc/profile-config.yaml#profileConfig'

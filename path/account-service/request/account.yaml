@@ -1,0 +1,47 @@
+Body:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        required:
+          - full_name
+          - gender
+        properties:
+          full_name:
+            type: string
+          profesi:
+            type: string
+          gender:
+            type: string
+            enum:
+              - male
+              - female
+            description: >
+              * enum : male | female | undefined
+          phone_number:
+            type: string
+          image:
+            type: string
+            format: binary
+          quote:
+            type: string
+
+PathProfileId:
+    name: profile-id
+    in: path
+    required: true
+
+Responses200:
+    description: OK
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            data:
+              type: object
+              properties:
+                user:
+                  $ref: '../../../component/schemas/account-svc/user.yaml#user'
+                profile:
+                  $ref: '../../../component/schemas/account-svc/profile.yaml#profile'

@@ -1,0 +1,23 @@
+400BadRequest:
+  description: BAD REQUEST
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          errors:
+            type: object
+            properties:
+              field1:
+                type: array
+                items:
+                  type: string
+                example:
+                  - "field must be string"
+                  - "required"
+              field2:
+                type: array
+                items:
+                  type: string
+                example:
+                  - "field2 must be integer"

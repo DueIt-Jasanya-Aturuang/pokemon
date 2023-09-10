@@ -1,0 +1,30 @@
+user:
+  type: object
+  properties:
+    id:
+      type: string
+      example: "userid_1"
+    full_name:
+      type: string
+      example: "rama"
+    gender:
+      type: string
+      example: male
+    image:
+      type: string
+      example: "/files/user-images/public/rama.png"
+    username:
+      type: string
+      example: "ibanrmaa"
+    email:
+      type: string
+      example: "ibanrama29@gmail.com"
+    email_format:
+      type: string
+      example: "i••••9@gmail.com"
+    phone_number:
+      type: string
+      example: "0889919230"
+    activated:
+      type: boolean
+      example: true

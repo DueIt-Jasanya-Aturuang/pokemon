@@ -1,0 +1,10 @@
+408RequestTimeout:
+  description: REQUEST TIMEOUT
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          errors:
+            type: string
+            example: "REQUEST TIMEOUT"
