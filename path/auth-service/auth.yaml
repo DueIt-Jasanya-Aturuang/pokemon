@@ -1,4 +1,15 @@
 Login:
+  description: |
+    - email_or_username : 
+      - maxLength: 55
+      - minLength: 3
+      - required: true
+    - password : 
+      - maxLength: 55
+      - minLength: 6
+      - required: true
+    - remember_me : 
+      - true or false
   tags:
     - auth-service
   parameters:
@@ -25,6 +36,25 @@ Login:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
 
 Register:
+  description: |
+    - full_name : 
+      - maxLength: 32
+      - minLength: 3
+      - required: true
+    - username : 
+      - maxLength: 22
+      - minLength: 3
+      - required: true
+    - email : 
+      - maxLength: 55
+      - minLength: 12
+      - regexp: `^([A-Za-z.]|[0-9])+@gmail.com$` (ini biar @gmail.com semua)
+      - required: true
+    - password and re_password : 
+      - maxLength: 55
+      - minLength: 6
+      - equal: password and re_password harus sama
+      - required: true
   tags:
     - auth-service
   parameters:
@@ -51,6 +81,12 @@ Register:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
 
 Login-Google:
+  description: |
+    - token : 
+      - required: true
+      - explanation: kalo device web berarti code nya yang di encrypt make aes trus di base64 encode | kalo device mobile berarti bikin bikin map 'access_token', 'id_token' di encode ke json -> encrypt -> base64 encode, jadi request token, 
+    - device : 
+      - 'web' or 'mobile'
   tags:
     - auth-service
   parameters:

@@ -1,4 +1,19 @@
 POST:
+  description: |
+    - config_value : 
+      - MONTHLY_PERIOD: 1 - 29
+      - DAILY_NOTIFY: 19:00 Asia/Jakarta | asia/jakarta itu timezone user saat itu, (iana timezone)
+      - required: true
+    - days : 
+      - fieldArray: "monday" or "tuesday" or "wednesday" or "thursday" or "friday" or "saturday" or "sunday" | berdasarkan yang user ceklis
+      - required: kalo `DAILY_NOTIFY` true 
+    - config_name : 
+      - must: `MONTHLY_PERIOD` or `DAILY_NOTIFY`
+    - status : 
+      - must: `on` or `off`
+    - token : 
+      - required: true
+      - maxLength: 255
   tags:
     - account-service
   parameters:
@@ -56,6 +71,20 @@ GET:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
 
 PUT:
+  description: |
+    ### note: config_name diambil dari query parameter dan itu harus `MONTHLY_PERIOD` or `DAILY_NOTIFY`
+    - config_value : 
+      - MONTHLY_PERIOD: 1 - 29
+      - DAILY_NOTIFY: 19:00 Asia/Jakarta | asia/jakarta itu timezone user saat itu, (iana timezone)
+      - required: true
+    - days : 
+      - fieldArray: "monday" or "tuesday" or "wednesday" or "thursday" or "friday" or "saturday" or "sunday" | berdasarkan yang user ceklis
+      - required: kalo `DAILY_NOTIFY` true 
+    - status : 
+      - must: `on` or `off`
+    - token : 
+      - required: true
+      - maxLength: 255
   tags:
     - account-service
   parameters:

@@ -1,7 +1,13 @@
 POST:
   tags:
     - auth-service
-  description: 'per email hanya memiliki 5 kali request dalam 1 jam untuk activasi akun, dan 6 jam untuk forgot password'
+  description: |
+    'per email hanya memiliki 5 kali request dalam 1 jam untuk activasi akun, dan 6 jam untuk forgot password'
+    - email : 
+      - maxLength: 55
+      - minLength: 12
+      - regexp: `^([A-Za-z.]|[0-9])+@gmail.com$` (ini biar @gmail.com semua)
+      - required: true
   parameters:
     - $ref: '../../component/parameter/header.yaml#AppId'
     - $ref: '../../component/parameter/header.yaml#Key'

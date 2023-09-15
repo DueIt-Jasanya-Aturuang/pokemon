@@ -1,4 +1,13 @@
 Activasi-Account:
+  description: |
+    - email:
+      - maxLength: 55
+      - minLength: 12
+      - regexp: `^([A-Za-z.]|[0-9])+@gmail.com$` (ini biar @gmail.com semua)
+      - required: true
+    - otp:
+      - mustLength: 6
+      - required: true
   tags:
     - auth-service
   parameters:
@@ -27,6 +36,16 @@ Activasi-Account:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
 
 Reset-Password:
+  description: |
+    - old_password:
+      - maxLength: 55
+      - minLength: 6
+      - required: true
+    - password and re_password : 
+      - maxLength: 55
+      - minLength: 6
+      - equal: password and re_password harus sama
+      - required: true
   tags:
     - auth-service
   parameters:
