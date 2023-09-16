@@ -5,6 +5,13 @@
       schema:
         type: object
         properties:
+          status:
+            $ref: 'error_code.yml#ErrorCode/properties/INTERNAL_SERVER_ERROR/properties/code'
+          message:
+            $ref: 'error_code.yml#ErrorCode/properties/INTERNAL_SERVER_ERROR/properties/message'
+          data:
+            type: null
+            example: null
           errors:
             type: string
             example: "INTERNAL SERVER ERROR"

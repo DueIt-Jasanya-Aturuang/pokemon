@@ -5,6 +5,13 @@
       schema:
         type: object
         properties:
+          status:
+            $ref: 'error_code.yml#ErrorCode/properties/BAD_REQUEST/properties/code'
+          message:
+            $ref: 'error_code.yml#ErrorCode/properties/BAD_REQUEST/properties/message'
+          data:
+            type: null
+            example: null
           errors:
             type: object
             properties:

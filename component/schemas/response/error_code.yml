@@ -1,0 +1,84 @@
+ErrorCode:
+  type: object
+  properties:
+    SUCCESS:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 200
+        message:
+          type: string
+          example: success
+    BAD_REQUEST:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 400
+        message:
+          type: string
+          example: invalid request
+    UNAUTHORIZED:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 401
+        message:
+          type: string
+          example: token invalid
+    FORBIDDEN:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 403
+        message:
+          type: string
+          example: access denied
+    NOT_FOUND:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 404
+        message:
+          type: string
+          example: not found
+    REQUEST_TIMEOUT:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 408
+        message:
+          type: string
+          example: timeout
+    UNPROCESSABLE_ENTITY:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 422
+        message:
+          type: string
+          example: server understands the content type
+    INTERNAL_SERVER_ERROR:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 500
+        message:
+          type: string
+          example: internal server error
+    SYSTEM_ERROR:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 99
+        message:
+          type: string
+          example: system error

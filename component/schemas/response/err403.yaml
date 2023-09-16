@@ -5,6 +5,13 @@
       schema:
         type: object
         properties:
+          status:
+            $ref: 'error_code.yml#ErrorCode/properties/FORBIDDEN/properties/code'
+          message:
+            $ref: 'error_code.yml#ErrorCode/properties/FORBIDDEN/properties/message'
+          data:
+            type: null
+            example: null
           errors:
             type: string
-            example: "FORBIDDEN"
+            example: FORBIDDEN

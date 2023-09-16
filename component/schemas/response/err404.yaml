@@ -5,6 +5,13 @@
       schema:
         type: object
         properties:
+          status:
+            $ref: 'error_code.yml#ErrorCode/properties/NOT_FOUND/properties/code'
+          message:
+            $ref: 'error_code.yml#ErrorCode/properties/NOT_FOUND/properties/message'
+          data:
+            type: null
+            example: null
           errors:
             type: string
-            example: "NOT FOUND"
+            example: NOT FOUND
