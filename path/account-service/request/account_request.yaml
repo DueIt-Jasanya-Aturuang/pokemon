@@ -38,7 +38,6 @@ Responses200:
         schema:
           type: object
           properties:
-            $ref: '../../../component/schemas/response/dueit/error_code.yml#success'
             data:
               type: object
               properties:
