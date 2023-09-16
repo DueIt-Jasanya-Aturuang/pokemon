@@ -2,6 +2,7 @@ POST:
   tags:
     - auth-service
   description: |
+    ### note kalo type activasi-account harus ada header User-ID nya
     'per email hanya memiliki 5 kali request dalam 1 jam untuk activasi akun, dan 6 jam untuk forgot password'
     - email : 
       - maxLength: 55
