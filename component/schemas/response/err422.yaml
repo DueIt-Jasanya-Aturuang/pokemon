@@ -13,8 +13,5 @@
             type: null
             example: null
           errors:
-            type: object
-            properties:
-              field1:
-                type: string
-                example: "unprocessable entity"
+            type: string
+            example: "unprocessable entity"

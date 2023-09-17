@@ -76,11 +76,11 @@ paths:
       tags:
         - auth-service
       $ref: './path/auth-service/user.yaml#/Activasi-Account'
-  /auth/reset-password:
+  /auth/change-password:
     put:
       tags:
         - auth-service
-      $ref: './path/auth-service/user.yaml#/Reset-Password'
+      $ref: './path/auth-service/user.yaml#/Change-Password'
   /forgot-password:
     post:
       tags:

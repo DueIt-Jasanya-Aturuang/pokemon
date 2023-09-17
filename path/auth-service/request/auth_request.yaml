@@ -3,39 +3,60 @@ BodyLogin:
     application/json:
       schema:
         type: object
-        required:
-          - email_or_username
-          - password
-          - remember_me
         properties:
-          email_or_username:
-            type: string
-          password:
-            type: string
-          remember_me:
-            type: boolean
+          status:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/code'
+          message:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/message'
+          errors:
+            type: null
+            example: null
+          data:
+            type: object
+            required:
+              - email_or_username
+              - password
+              - remember_me
+            properties:
+              email_or_username:
+                type: string
+              password:
+                type: string
+              remember_me:
+                type: boolean
+
 BodyRegister:
   content:
     application/json:
       schema:
         type: object
-        required:
-          - full_name
-          - username
-          - email
-          - password
-          - re_password
         properties:
-          full_name:
-            type: string
-          username:
-            type: string
-          email:
-            type: string
-          password:
-            type: string
-          re_password:
-            type: string
+          status:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/code'
+          message:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/message'
+          errors:
+            type: null
+            example: null
+          data:
+            type: object
+            required:
+              - full_name
+              - username
+              - email
+              - password
+              - re_password
+            properties:
+              full_name:
+                type: string
+              username:
+                type: string
+              email:
+                type: string
+              password:
+                type: string
+              re_password:
+                type: string
 
 BodyLoginGoogle:
   content:
@@ -63,6 +84,13 @@ Response200:
       schema:
         type: object
         properties:
+          status:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/code'
+          message:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/message'
+          errors:
+            type: null
+            example: null
           data:
             type: object
             properties:
@@ -80,6 +108,14 @@ Response200Logout:
       schema:
         type: object
         properties:
+          status:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/code'
           message:
-            type: string
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/message'
+          errors:
+            type: null
+            example: null
+          data:
+            type: null
+            example: null
 

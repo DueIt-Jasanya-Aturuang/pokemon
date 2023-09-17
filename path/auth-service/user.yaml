@@ -35,7 +35,7 @@ Activasi-Account:
     500:
       $ref: '../../component/schemas/response/err500.yaml#500InternalServerError'
 
-Reset-Password:
+Change-Password:
   description: |
     - old_password:
       - maxLength: 55
@@ -54,7 +54,7 @@ Reset-Password:
     - $ref: '../../component/parameter/header.yaml#Key'
     - $ref: '../../component/parameter/header.yaml#UserId'
   requestBody:
-    $ref: './request/user_request.yaml#BodyResetPassword'
+    $ref: './request/user_request.yaml#BodyChangePassword'
   responses:
     200:
       $ref: './request/user_request.yaml#Response200'

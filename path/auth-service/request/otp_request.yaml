@@ -23,6 +23,14 @@ Response200:
       schema:
         type: object
         properties:
+          status:
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/code'
           message:
-            type: string
+            $ref: '../../../component/schemas/response/error_code.yml#ErrorCode/properties/SUCCESS/properties/message'
+          errors:
+            type: null
+            example: null
+          data:
+            type: null
+            example: null
 
