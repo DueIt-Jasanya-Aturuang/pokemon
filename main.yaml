@@ -21,7 +21,7 @@ tags:
   - name: auth-service
     description: ini berkaitan authentication
 paths:
-  /account/{profile-id}:
+  /account:
     put:
       tags:
         - account-service
@@ -31,12 +31,12 @@ paths:
       tags:
         - account-service
       $ref: "./path/account-service/profile.yaml#/GET"
-  /account/profile-config/{profile-id}:
+  /account/profile-config:
     post:
       tags:
         - account-service
       $ref: "./path/account-service/profile-config.yaml#/POST"
-  /account/profile-config/{profile-id}/{config-name}:
+  /account/profile-config/{config-name}:
     get:
       tags:
         - account-service

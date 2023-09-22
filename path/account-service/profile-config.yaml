@@ -21,7 +21,6 @@ POST:
     - $ref: '../../component/parameter/header.yaml#Authorization'
     - $ref: '../../component/parameter/header.yaml#Key'
     - $ref: '../../component/parameter/header.yaml#UserId'
-    - $ref: './request/profile-config_request.yaml#PathProfileId'
   requestBody:
     $ref : './request/profile-config_request.yaml#BodyPost'
   responses:
@@ -50,7 +49,6 @@ GET:
     - $ref: '../../component/parameter/header.yaml#Authorization'
     - $ref: '../../component/parameter/header.yaml#Key'
     - $ref: '../../component/parameter/header.yaml#UserId'
-    - $ref: './request/profile-config_request.yaml#PathProfileId'
     - $ref: './request/profile-config_request.yaml#PathConfigName'
   responses:
     200:
@@ -92,7 +90,6 @@ PUT:
     - $ref: '../../component/parameter/header.yaml#Authorization'
     - $ref: '../../component/parameter/header.yaml#Key'
     - $ref: '../../component/parameter/header.yaml#UserId'
-    - $ref: './request/profile-config_request.yaml#PathProfileId'
     - $ref: './request/profile-config_request.yaml#PathConfigName'
   requestBody:
     $ref: './request/profile-config_request.yaml#BodyPut'
