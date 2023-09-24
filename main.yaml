@@ -81,6 +81,11 @@ paths:
       tags:
         - auth-service
       $ref: './path/auth-service/user.yaml#/Change-Password'
+  /auth/change-username:
+    put:
+      tags:
+        - auth-service
+      $ref: './path/auth-service/user.yaml#/Change-Username'
   /forgot-password:
     post:
       tags:
